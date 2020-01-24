@@ -22,14 +22,51 @@
 \begin{enumerate}
     \item Write a script to generate random “errors”. Take s=1 and try M=1, 4, 16, 32. Plot the histograms using “pdf” normalization such that the area under them is 1. Compare with a normal distribution with mean zero and standard deviation 1.
 
+
 For each value of M, 1000 trials were performed to generate the data for the histograms. The results, with a normal distribution imposed, are shown below.
-\includegraphics{}
+
+\includegraphics{Q1_M1.png}
+
+\includegraphics{Q1_M4.png}
+
+\includegraphics{Q1_M16.png}
+
+\includegraphics{Q1_M32.png}
+
+For \(M = 1\), the normal distribution does not match the histogram of “errors” at all. However, as M increases, the histogram gets closer to the bell curve, as seen in \(M=16\) and \(M=32\).
+
+
+\item Suppose we wish to determine the Young’s modulus E of wood by measuring the stiffness of a cantilever beam.
+\begin{enumerate}
+    \item Use the error propagation formulas in the Background to analytically estimate the uncertainty $E$ derived from the measurements.
+
+Rearranging the two equations given, we obtain
+
+\[ E=\frac{4FL^3}{\delta b h^3} \]
+
+Assuming that all five uncertainties are independent, we can estimate the uncertainty in E following basic error propagation rules for multiplication, division, and exponentiation to a constant power:
 
 \newcommand{\reluncer}[2][]{\left( #1 \frac{\Delta #2}{#2} \right)^2 }
 
-\[
+\begin{equation}
 \frac{\Delta E}{E} = \sqrt{\reluncer{F} + \reluncer[3]{L} + \reluncer{\delta} + \reluncer{d} + \reluncer[3]{h}}
-\]
+\end{equation}
+
+
+Here, \(\Delta\) is used to indicate uncertainty, since \(\delta\) is used for deflection. Plugging in the reported data, we find that \(E = 13 \pm 4 \si{ GPa}\).
+
+    \item Use the {\tt random.standard\_normal} NumPy function to generate 10,000 sets of simulated parameters. For each of these sets compute $E$ using the beam formula and plot the histogram of $E$ at the end. Compare this with the result from a.
+
+\includegraphics{Q2.png}
+
+The Monte Carlo simulation results are skewed from the idealized normal distribution; this is a result of the nonlinearities not accounted for in determining the idealized normal distribution and the large relative error in $h$ invalidating the linear approximation to some degree. However, the resulting value for $E$ is similar: $E = 14 \pm 5 \si{ GPa}$. This range overlaps the result from part (a), indicating that there is no significant discrepency.
+
+    \item Suppose you wanted to improve your measurement of $E$. What measurements could be improved to give the biggest benefit?
+
+Of the terms summed in quadrature in equation 1, the most significant term by far is \( \displaystyle \reluncer[3]{h} \), especially considering the result of summation in quadrature is dominated by the largest term. This indicates that the greatest benefit could be obtained by improving the accuracy of the measurement of \(h\), such as by using better measuring instruments.
+
+
+\end{enumerate}
 
 
 

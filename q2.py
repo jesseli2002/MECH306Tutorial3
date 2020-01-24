@@ -26,7 +26,7 @@ delta_base = 0.008
 
 E_x = np.linspace(E.n - 4 * E.s, E.n + 4 * E.s, num=200)
 E_y = scipy.stats.norm.pdf(E_x, E.n, E.s)
-plt.plot(E_x, E_y, color='orange')
+plt.plot(E_x, E_y, color='orange', label="Analytical")
 
 
 N = 10000
@@ -44,11 +44,16 @@ for i in range(N):
     E_results[i] = F * L ** 3 / (3 * delta * I)
 
 E_results /= 1E9 #present in GPA
-plt.hist(E_results, bins=30, density=True)
+plt.hist(E_results, bins=30, density=True, label="Simulated")
 
 plt.xlabel("E (GPa)")
 plt.ylabel(r"Probability density (GPa$ ^{-1}$)")
 plt.title("PDF for E, determined analytically and by Monte Carlo simulation")
+plt.legend()
 
 plt.savefig(f'Q2.png', bbox_inches='tight')
-plt.show()
+E_avg = np.average(E_results)
+E_uncer = np.std(E_results)
+print(E_avg)
+print(E_uncer)
+# plt.show()
