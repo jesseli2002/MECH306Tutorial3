@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 s = 1
 
 M_choices = [1, 4, 16, 32]
-large_N = 10000
+large_N = 1000
 
 for M in M_choices:
     vals = np.zeros(large_N)
@@ -28,14 +28,15 @@ for M in M_choices:
     ideal_y = scipy.stats.norm.pdf(ideal_x, 0, 1)
 
     plt.clf()
-    plt.hist(vals, bins=bins, density=True)
-    plt.plot(ideal_x, ideal_y, color='orange')
+    plt.hist(vals, bins=bins, density=True, label="Simulated values")
+    plt.plot(ideal_x, ideal_y, color='orange', label="Normal distribution")
 
-    plt.xlabel(r"$\epsilon$")
-    plt.ylabel("Probability Density")
-
-    plt.legend("Simulated values", "Normal distribution")
-    plt.title(f"Simulated errors, M = {M}")
+    plt.xlabel(r"$\epsilon$", size=12)
+    plt.ylabel("Probability Density", size=12)
+    plt.xticks(size=12)
+    plt.yticks(size=12)
+    plt.legend()
+    plt.title(f"Simulated errors, M = {M}", size=12)
 
     plt.savefig(f'Q1_M{M}.png', bbox_inches='tight')
 

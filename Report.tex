@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+%for units
+\usepackage{siunitx}
+
+%for paper size
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+
+%for images
+\usepackage{graphicx}
+
+\begin{document}
+
+\author{Jesse Li, 61066156}
+\date{2020/01/23}
+\title{MECH306 Tutorial 3 - Central Limit Theorem and Error Propagation by Monte Carlo Simulation}
+
+\maketitle
+
+\begin{enumerate}
+    \item Write a script to generate random “errors”. Take s=1 and try M=1, 4, 16, 32. Plot the histograms using “pdf” normalization such that the area under them is 1. Compare with a normal distribution with mean zero and standard deviation 1.
+
+For each value of M, 1000 trials were performed to generate the data for the histograms. The results, with a normal distribution imposed, are shown below.
+\includegraphics{}
+
+\newcommand{\reluncer}[2][]{\left( #1 \frac{\Delta #2}{#2} \right)^2 }
+
+\[
+\frac{\Delta E}{E} = \sqrt{\reluncer{F} + \reluncer[3]{L} + \reluncer{\delta} + \reluncer{d} + \reluncer[3]{h}}
+\]
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document}

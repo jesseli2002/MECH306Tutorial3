@@ -1,2 +1,4 @@
 .vscode/
 *.png
+*.pdf
+*.synctex.gz
