@@ -44,7 +44,7 @@ for i in range(N):
     E_results[i] = F * L ** 3 / (3 * delta * I)
 
 E_results /= 1E9 #present in GPA
-plt.hist(E_results, bins=30, density=True, label="Simulated")
+plt.hist(E_results, bins=30, density=True, label="Simulated", histtype='step')
 
 plt.xlabel("E (GPa)")
 plt.ylabel(r"Probability density (GPa$ ^{-1}$)")

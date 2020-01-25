@@ -28,7 +28,7 @@ for M in M_choices:
     ideal_y = scipy.stats.norm.pdf(ideal_x, 0, 1)
 
     plt.clf()
-    plt.hist(vals, bins=bins, density=True, label="Simulated values")
+    plt.hist(vals, bins=bins, density=True, label="Simulated values", histtype='step')
     plt.plot(ideal_x, ideal_y, color='orange', label="Normal distribution")
 
     plt.xlabel(r"$\epsilon$", size=12)

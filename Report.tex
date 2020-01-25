@@ -25,13 +25,13 @@
 
 For each value of M, 1000 trials were performed to generate the data for the histograms. The results, with a normal distribution imposed, are shown below.
 
-\includegraphics{Q1_M1.png}
+\includegraphics[scale=0.8]{Q1_M1.png}
 
-\includegraphics{Q1_M4.png}
+\includegraphics[scale=0.8]{Q1_M4.png}
 
-\includegraphics{Q1_M16.png}
+\includegraphics[scale=0.8]{Q1_M16.png}
 
-\includegraphics{Q1_M32.png}
+\includegraphics[scale=0.8]{Q1_M32.png}
 
 For \(M = 1\), the normal distribution does not match the histogram of “errors” at all. However, as M increases, the histogram gets closer to the bell curve, as seen in \(M=16\) and \(M=32\).
 
@@ -49,7 +49,7 @@ Assuming that all five uncertainties are independent, we can estimate the uncert
 \newcommand{\reluncer}[2][]{\left( #1 \frac{\Delta #2}{#2} \right)^2 }
 
 \begin{equation}
-\frac{\Delta E}{E} = \sqrt{\reluncer{F} + \reluncer[3]{L} + \reluncer{\delta} + \reluncer{d} + \reluncer[3]{h}}
+\frac{\Delta E}{E} = \sqrt{\reluncer{F} + \reluncer[3]{L} + \reluncer{\delta} + \reluncer{b} + \reluncer[3]{h}}
 \end{equation}
 
 
