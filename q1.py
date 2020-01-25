@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 s = 1
 
 M_choices = [1, 4, 16, 32]
-large_N = 1000
+large_N = 10000
 
 for M in M_choices:
     vals = np.zeros(large_N)

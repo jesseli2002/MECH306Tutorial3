@@ -44,16 +44,21 @@ for i in range(N):
     E_results[i] = F * L ** 3 / (3 * delta * I)
 
 E_results /= 1E9 #present in GPA
-plt.hist(E_results, bins=30, density=True, label="Simulated", histtype='step')
+plt.hist(E_results, bins=30, density=True, label="Simulated", histtype='step', color='#0000ff')
 
 plt.xlabel("E (GPa)")
 plt.ylabel(r"Probability density (GPa$ ^{-1}$)")
 plt.title("PDF for E, determined analytically and by Monte Carlo simulation")
+
+E_avg = np.average(E_results)
+E_uncer = np.std(E_results)
+# plt.axvline(E_avg, color='c', label="Average simulated E")  #cyan
+# plt.axvline(E_avg + E_uncer, color='c', dashes=(5, 5), label=r"Average \pm 1\sigma")
+# plt.axvline(E_avg - E_uncer, color='c', dashes=(5,5))
+
 plt.legend()
 
 plt.savefig(f'Q2.png', bbox_inches='tight')
-E_avg = np.average(E_results)
-E_uncer = np.std(E_results)
 print(E_avg)
 print(E_uncer)
 # plt.show()

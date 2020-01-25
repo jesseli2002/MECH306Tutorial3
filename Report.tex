@@ -20,10 +20,10 @@
 \maketitle
 
 \begin{enumerate}
-    \item Write a script to generate random “errors”. Take s=1 and try M=1, 4, 16, 32. Plot the histograms using “pdf” normalization such that the area under them is 1. Compare with a normal distribution with mean zero and standard deviation 1.
+    \item Write a script to generate random “errors”. Take \(s=1\) and try \(M = 1, 4, 16, 32\). Plot the histograms using “pdf” normalization such that the area under them is 1. Compare with a normal distribution with mean zero and standard deviation 1.
 
 
-For each value of M, 1000 trials were performed to generate the data for the histograms. The results, with a normal distribution imposed, are shown below.
+For each value of \(M\), 10,000 trials were performed to generate the data for the histograms. The results, with a normal distribution imposed, are shown below.
 
 \includegraphics[scale=0.8]{Q1_M1.png}
 
@@ -56,6 +56,8 @@ Assuming that all five uncertainties are independent, we can estimate the uncert
 Here, \(\Delta\) is used to indicate uncertainty, since \(\delta\) is used for deflection. Plugging in the reported data, we find that \(E = 13 \pm 4 \si{ GPa}\).
 
     \item Use the {\tt random.standard\_normal} NumPy function to generate 10,000 sets of simulated parameters. For each of these sets compute $E$ using the beam formula and plot the histogram of $E$ at the end. Compare this with the result from a.
+
+The below graph shows the resulting histogram. For comparison, the normal distribution determined from the analytical estimate in part a. is plotted as well.
 
 \includegraphics{Q2.png}
 
